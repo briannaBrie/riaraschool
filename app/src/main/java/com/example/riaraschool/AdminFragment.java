@@ -69,6 +69,7 @@ public class AdminFragment extends Fragment {
         adminRecyclerView.setLayoutManager(layoutManager);
 
         return view;
+
     }
 
     @Override

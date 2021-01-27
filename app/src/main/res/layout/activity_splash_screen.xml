@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    android:orientation="vertical"
+    tools:context=".SplashScreenActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/first_line"
+            android:layout_width="@dimen/dim20"
+            android:layout_height="@dimen/dim50"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/white_line" />
+
+        <View
+            android:id="@+id/second_line"
+            android:layout_width="@dimen/dim20"
+            android:layout_height="@dimen/dim100"
+            android:layout_marginLeft="@dimen/dim8"
+            android:layout_toRightOf="@id/first_line"
+            android:background="@drawable/second_gradient" />
+
+        <View
+            android:id="@+id/third_line"
+            android:layout_width="@dimen/dim20"
+            android:layout_height="@dimen/dim250"
+            android:layout_marginLeft="@dimen/dim8"
+            android:layout_toRightOf="@id/second_line"
+            android:background="@color/fuchsia" />
+
+        <View
+            android:id="@+id/fourth_line"
+            android:layout_width="@dimen/dim20"
+            android:layout_height="@dimen/dim200"
+            android:layout_marginLeft="@dimen/dim8"
+            android:layout_toRightOf="@id/third_line"
+            android:background="@drawable/second_gradient" />
+
+        <View
+            android:id="@+id/fifth_line"
+            android:layout_width="@dimen/dim20"
+            android:layout_height="@dimen/dim220"
+            android:layout_marginLeft="@dimen/dim8"
+            android:layout_toRightOf="@id/fourth_line"
+            android:background="@color/fuchsia" />
+
+        <View
+            android:id="@+id/sixth_line"
+            android:layout_width="@dimen/dim20"
+            android:layout_height="@dimen/dim150"
+            android:layout_marginLeft="@dimen/dim8"
+            android:layout_toRightOf="@id/fifth_line"
+            android:background="@drawable/white_line" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim20" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="48dp"
+            android:src="@drawable/riara_logo"
+            app:layout_constraintBottom_toTopOf="@+id/logo_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.567"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.025" />
+
+        <TextView
+            android:id="@+id/logo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="@string/riara_schools"
+            android:textColor="@color/fuchsia"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.598"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.459" />
+
+        <TextView
+            android:id="@+id/slogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="cursive"
+            android:text="@string/making"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.607"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_name"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

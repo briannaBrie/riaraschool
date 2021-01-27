@@ -1,5 +1,6 @@
 package com.example.riaraschool.network;
 
+import com.example.riaraschool.model.EnglishModel;
 import com.example.riaraschool.model.GradeModel;
 
 import java.util.List;
@@ -38,5 +39,8 @@ public interface APIService {
             @Query("lesson") String lesson
     );
 
+    //selete all quizzes
+    @GET("english")
+    Call<EnglishModel> getEnglishQuiz();
 
 }

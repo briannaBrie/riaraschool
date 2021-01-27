@@ -56,9 +56,14 @@ public class GradeListAdapter extends RecyclerView.Adapter<GradeListAdapter.Grad
         holder.gradeDesc.setText(gradeModelList.get(position).getLesson_desc());
         holder.gradeLesson.setText(String.valueOf(gradeModelList.get(position).getNo_of_lessons()));
 
-        Glide.with(context)
+   /*     Glide.with(context)
                 .load(gradeModelList.get(position).getAvatar())
                 .apply(RequestOptions.bitmapTransform(new RoundedCorners(12)).override(70,70))
+                .into(holder.gradeAvatar);*/
+
+        Picasso.get()
+                .load(gradeModelList.get(position).getAvatar())
+                .fit()
                 .into(holder.gradeAvatar);
     }
 
