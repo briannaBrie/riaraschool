@@ -121,10 +121,10 @@
 
 
             <Button
+                android:id="@+id/btnLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_round"
-                android:onClick="@{viewmodel::onLoginBtnClick}"
                 android:text="@string/action_sign_in_short"
                 android:textColor="@color/white"
                 android:textStyle="bold"

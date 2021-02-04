@@ -39,7 +39,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     Animation topAnim, bottomAnim, middleAnim;
     private Handler handler = new Handler();
 
-    private static int SPLASH_TIME_OUT = 5000;
+    private static int SPLASH_TIME_OUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

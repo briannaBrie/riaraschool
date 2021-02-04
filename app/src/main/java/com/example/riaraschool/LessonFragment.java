@@ -1,8 +1,10 @@
 package com.example.riaraschool;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.riaraschool.adapter.GradeListAdapter;
+import com.example.riaraschool.adapter.LessonAdapter;
 import com.example.riaraschool.model.GradeModel;
 import com.example.riaraschool.viewmodel.GradeListViewModel;
 
@@ -32,7 +35,7 @@ public class LessonFragment extends Fragment {
     RecyclerView adminRecyclerView;
     private LinearLayoutManager layoutManager;
     private List<GradeModel> gradeList;
-    private GradeListAdapter gradeListAdapter;
+    private LessonAdapter la;
 
     public static LessonFragment newInstance() {
         return new LessonFragment();
@@ -42,16 +45,15 @@ public class LessonFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_lesson, container, false);
-
         ButterKnife.bind(this, view);
         initAll();
-
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         mViewModel = new ViewModelProvider(this).get(GradeListViewModel.class);
 
         // TODO: Use the ViewModel
@@ -61,7 +63,7 @@ public class LessonFragment extends Fragment {
             public void onChanged(List<GradeModel> gradeModels) {
                 if(gradeModels!=null){
                     gradeList = gradeModels;
-                    gradeListAdapter.setGradeModelList(gradeModels);
+                    la.setLessonList(gradeModels);
                 }
                 else{
                     Toast toast= Toast.makeText(requireContext(), R.string.no_result,Toast.LENGTH_SHORT);
@@ -70,13 +72,15 @@ public class LessonFragment extends Fragment {
             }
         });
         mViewModel.makeApiCall();
+
     }
 
     private void initAll() {
         layoutManager = new LinearLayoutManager(requireContext());
-        gradeListAdapter = new GradeListAdapter(requireContext(), gradeList);
-        adminRecyclerView.setAdapter(gradeListAdapter);
+        la = new LessonAdapter(requireContext(), gradeList);
+        adminRecyclerView.setAdapter(la);
         adminRecyclerView.setLayoutManager(layoutManager);
     }
+
 
 }

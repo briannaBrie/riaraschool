@@ -30,13 +30,13 @@ public abstract class UserDB extends RoomDatabase {
                     UserDB.class,DATABASE_NAME)
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()//if version number is increased then delete this one and recreate it
-                    .addCallback(roomCallBack)//to populate our database
+                   // .addCallback(roomCallBack)//to populate our database
                     .build();
         }
         //return the existing instance if not null
         return instance;
     }
-
+/*
     //populate database
     private static RoomDatabase.Callback roomCallBack = new RoomDatabase.Callback(){
         @Override
@@ -61,5 +61,5 @@ public abstract class UserDB extends RoomDatabase {
             dao.insert(new User(2, "admin@gmail.com", "admin"));
             return null;
         }
-    }
+    }*/
 }

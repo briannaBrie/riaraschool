@@ -2,6 +2,7 @@ package com.example.riaraschool.model;
 
 import android.text.TextUtils;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -12,6 +13,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "users")
 public class User {
     @PrimaryKey(autoGenerate = true)
+    @NonNull
     private int userId;
 
     @ColumnInfo(name = "email")
@@ -24,12 +26,12 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
+    @NonNull
     public int getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(@NonNull int userId) {
         this.userId = userId;
     }
 
@@ -49,8 +51,6 @@ public class User {
         this.password = password;
     }
 
-    public boolean isValid(){
-        return !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)&&
-                getPassword().length()>4;
-    }
+
+
 }

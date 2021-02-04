@@ -12,10 +12,12 @@
         android:roundIcon="@mipmap/ic_riara_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Riaraschool">
+        <activity android:name=".ProfileActivity"
+            android:theme="@style/Theme.Login" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Login"></activity>
+            android:theme="@style/Theme.Login" />
         <activity
             android:name=".SplashScreenActivity"
             android:noHistory="true"

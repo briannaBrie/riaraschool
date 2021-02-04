@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     private void exitApp() {
         new AlertDialog.Builder(this) // fluent interface
                 .setIcon(R.drawable.logout)

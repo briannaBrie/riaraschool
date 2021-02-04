@@ -2,6 +2,7 @@ package com.example.riaraschool.respository;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.text.TextUtils;
 
 import androidx.lifecycle.LiveData;
 
@@ -12,15 +13,16 @@ import com.example.riaraschool.model.User;
 import java.util.List;
 
 public class UserRepository {
+    /*
     private UsersDao dao;
     private LiveData<List<User>> allUsers;
-
 
     public UserRepository(Application application){
         UserDB database =  UserDB.getInstance(application);
         dao = database.dao();
         allUsers = dao.getAll();
     }
+
 
     public void insert(User user){
         new InsertUserAsyncTask(dao).execute(user);
@@ -95,6 +97,6 @@ public class UserRepository {
             usersDao.reset();
             return null;
         }
-    }
+    }*/
 
 }

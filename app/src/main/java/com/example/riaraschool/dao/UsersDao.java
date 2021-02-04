@@ -35,4 +35,11 @@ public interface UsersDao {
     //Make it also an observable object to return live data
     @Query("SELECT * FROM users ORDER BY email DESC")
     LiveData<List<User>> getAll();
+
+    @Query("SELECT * FROM users where email= :mail and password= :pass")
+    boolean searchUser(String mail, String pass);
+
+    @Query("SELECT * FROM users where email= :mail and password= :pass")
+    User getUser(String mail, String pass);
+
 }

@@ -16,12 +16,5 @@
         android:name="com.example.riaraschool.AdminFragment"
         android:label="@string/admin"
         tools:layout = "@layout/admin_fragment"/>
-    <!--fragment
-        android:id="@+id/menuAbout"
-        android:name="com.example.riaraschool.AboutUsFragment"
-        android:label="@string/admin"
-        tools:layout = "@layout/fragment_about_us_"/-->
-
-    <!--Later add the home/login -->
 
 </navigation>

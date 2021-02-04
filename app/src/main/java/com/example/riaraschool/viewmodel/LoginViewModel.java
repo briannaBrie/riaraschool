@@ -1,115 +1,72 @@
 package com.example.riaraschool.viewmodel;
 
-import android.app.Application;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.riaraschool.callbacks.LoginCallBacks;
-import com.example.riaraschool.database.UserDB;
+
+import com.example.riaraschool.dao.UsersDao;
 import com.example.riaraschool.model.User;
 import com.example.riaraschool.respository.UserRepository;
 
 import java.util.List;
 
-public class LoginViewModel extends AndroidViewModel {
+public class LoginViewModel extends ViewModel {
+
     //prepare the database for the UI
     private UserRepository repo;
     private LiveData<List<User>> allUsers;
-    private LoginCallBacks callBacks;
     private User user;
+    private UsersDao dao;
 
 
-    public LoginViewModel(@NonNull Application application) {
-        super(application);
-        repo = new UserRepository(application);
-        allUsers = repo.getAllUsers();
+    public LoginViewModel() {
+        //repo = new UserRepository(application);
+        allUsers = dao.getAll();
     }
 
     public void insert(User user) {
-        repo.insert(user);
+        dao.insert(user);
     }
 
     public void update(User user) {
-        repo.update(user);
+        dao.update(user);
     }
 
     public void delete(User user) {
-        repo.delete(user);
+        dao.delete(user);
     }
 
     public void reset(User user) {
-        repo.reset();
+        dao.reset();
     }
 
     public LiveData<List<User>> getAllUsers() {
-        return repo.getAllUsers();
+        return dao.getAll();
     }
 
-    //callbacks
-    public LoginViewModel(@NonNull Application application, LoginCallBacks callBacks) {
-        super(application);
-        this.callBacks = callBacks;
+    public boolean checkUser(String email, String Password){
+        dao.getUser(email, Password);
+        return true;
     }
 
-    public LoginCallBacks getCallBacks() {
-        return callBacks;
-    }
-
-    public void setCallBacks(LoginCallBacks callBacks) {
-        this.callBacks = callBacks;
-    }
-    public TextWatcher emailTextWatcher(){
-        return new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+   /* public boolean getCheckLogin(String mail, String pass) {
+        if (isValid()) {
+            User user = dao.getUser(mail,pass)
+            if(user!=null){
+                return true;
             }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                user.setEmail(s.toString());
-            }
-        };
-    }
-
-    public TextWatcher passTextWatcher(){
-        return new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                user.setPassword(s.toString());
-            }
-        };
-    }
-
-    public void onLoginBtnClick(View view){
-        if(user.isValid()){
-            callBacks.onSuccess("Successful");
+            else
+                return false;
         }
-        else{
-            callBacks.onFailure("Failed");
-        }
+        else
+            return false;
     }
+
+    public boolean isValid() {
+        return !TextUtils.isEmpty(user.getEmail()) && !TextUtils.isEmpty(user.getPassword()) &&
+                user.getPassword().length() > 4;
+    }*/
+
+
 }
 

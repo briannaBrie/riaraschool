@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menuLessons"
+        android:id="@+id/menuLesson"
         android:title="@string/lesson"
         android:icon="@drawable/english"/>
     <item
