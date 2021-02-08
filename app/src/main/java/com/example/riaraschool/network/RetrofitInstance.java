@@ -36,7 +36,7 @@ public class RetrofitInstance {
     public EnglishModel makeEnglishApiCall() {
         APIService service = RetrofitInstance.getRetrofitClient().create(APIService.class);
         Call<EnglishModel> call = service.getEnglishQuiz();
-        //Call<List<EnglishModel>> call = service.getEnglishQuiz();
+
         call.enqueue(new Callback<EnglishModel>() {
             @Override
             public void onResponse(Call<EnglishModel> call, Response<EnglishModel> response) {

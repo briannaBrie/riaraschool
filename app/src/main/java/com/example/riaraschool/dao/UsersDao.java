@@ -17,7 +17,7 @@ import static androidx.room.OnConflictStrategy.REPLACE;
 public interface UsersDao {
     //insert Query
     @Insert(onConflict = REPLACE)
-    void insert(User userData);
+    void registerUser(User userData);
 
     //delete
     @Delete
@@ -31,15 +31,22 @@ public interface UsersDao {
     @Update
     void update(User user);
 
+    //add multiple
+    @Insert
+    void insertMultipleUsers(List<User> userList);
+
     //get all the data
-    //Make it also an observable object to return live data
     @Query("SELECT * FROM users ORDER BY email DESC")
-    LiveData<List<User>> getAll();
+    List<User> getUserList();
+
+    //returns livedata with a list of all Users
+    @Query("SELECT * FROM users ORDER BY email DESC")
+    public LiveData<List<User>> getAll();
 
     @Query("SELECT * FROM users where email= :mail and password= :pass")
     boolean searchUser(String mail, String pass);
 
     @Query("SELECT * FROM users where email= :mail and password= :pass")
-    User getUser(String mail, String pass);
-
+    User loginUser(String mail, String pass);
 }
+

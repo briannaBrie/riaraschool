@@ -73,10 +73,6 @@ public class EngQuizActivity extends AppCompatActivity {
         String qstnVal = englishViewModel.getModelVal().getTitle().toString();
         qstn.setText(qstnVal);
         String img1Val = englishViewModel.getModelVal().getImage1().toString();
-        /*Glide.with(context)
-                .load(img1Val)
-                .apply(RequestOptions.bitmapTransform(new RoundedCorners(12)).override(70,70))
-                .into(image1);*/
 
         Picasso.get()
                 .load(img1Val)

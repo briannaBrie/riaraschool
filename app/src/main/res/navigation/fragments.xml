@@ -16,5 +16,10 @@
         android:name="com.example.riaraschool.AdminFragment"
         android:label="@string/admin"
         tools:layout = "@layout/admin_fragment"/>
+    <fragment
+        android:id="@+id/menuAbout"
+        android:name="com.example.riaraschool.AboutFragment"
+        android:label="@string/about"
+        tools:layout = "@layout/fragment_about"/>
 
 </navigation>

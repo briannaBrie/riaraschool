@@ -9,5 +9,9 @@
         android:id="@+id/menuAdmin"
         android:title="@string/admin"
         android:icon="@drawable/admin"/>
+    <item
+        android:id="@+id/menuAbout"
+        android:title="@string/about"
+        android:icon="@drawable/math"/>
 
 </menu>

@@ -2,6 +2,7 @@ package com.example.riaraschool.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,9 +53,14 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         holder.gradeSubject.setText(lessonModelList.get(position).getSubject());
         holder.gradeDesc.setText(lessonModelList.get(position).getLesson_desc());
         holder.gradeLesson.setText(String.valueOf(lessonModelList.get(position).getNo_of_lessons()));
-        holder.subjectLayout.setOnClickListener(v -> {
+       /* holder.subjectLayout.setOnClickListener(v -> {
             Intent intent = new Intent(context, EngQuizActivity.class);
             context.startActivity(intent);
+        });*/
+        holder.itemView.setOnClickListener(v ->{
+            Log.d("aaa","Grade subject: " + holder.gradeSubject.getText());
+                Intent intent = new Intent(context, EngQuizActivity.class);
+                context.startActivity(intent);
         });
 
 
@@ -89,6 +95,9 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
             super(itemView);
 
             ButterKnife.bind(this, itemView);
+
+
+
         }
     }
 }

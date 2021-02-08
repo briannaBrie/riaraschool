@@ -16,50 +16,36 @@ import com.example.riaraschool.dao.UsersDao;
 public abstract class UserDB extends RoomDatabase {
     //create a Database instance
     private static UserDB instance;
-    public abstract UsersDao dao();
-
     //define database name
     private static String DATABASE_NAME = "database";
 
+    public abstract UsersDao dao();
+
     //singleton instance
-    public synchronized static UserDB getInstance(Context context) {
+    public static synchronized  UserDB getInstance(Context context) {
         //check if the database is null
         if (instance == null) {
             //initialise the database is there is no instance
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     UserDB.class,DATABASE_NAME)
-                    .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()//if version number is increased then delete this one and recreate it
-                   // .addCallback(roomCallBack)//to populate our database
+                    .allowMainThreadQueries()//not recommended
+                    //.addCallback(userDatabaseCallback)
                     .build();
+
         }
         //return the existing instance if not null
         return instance;
     }
-/*
-    //populate database
-    private static RoomDatabase.Callback roomCallBack = new RoomDatabase.Callback(){
+  /*  private static RoomDatabase.Callback userDatabaseCallback = new RoomDatabase.Callback(){
         @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase db) {
-            super.onCreate(db);
-            //called once when db is created
-            new PopulateDbAsyncTask(instance).execute();
-        }
-    };
-
-    private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void>{
-
-        private UsersDao dao;
-
-        public PopulateDbAsyncTask(UserDB db) {
-            dao = db.dao();
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            dao.insert(new User(1, "brie@gmail.com", "12345"));
-            dao.insert(new User(2, "admin@gmail.com", "admin"));
-            return null;
+        public void onOpen(@NonNull SupportSQLiteDatabase db) {
+            super.onOpen(db);
+            // If you want to keep the data through app restarts,
+            // comment out the following line.
+            new PopulateDbAsync(INSTANCE).execute();
         }
     }*/
 }
+
+

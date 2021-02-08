@@ -21,11 +21,14 @@ public class User {
     @ColumnInfo(name = "password")
     private String password;
 
-    public User(int userId, String email, String password) {
-        this.userId = userId;
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
+
+    public User() {
+    }
+
     @NonNull
     public int getUserId() {
         return userId;

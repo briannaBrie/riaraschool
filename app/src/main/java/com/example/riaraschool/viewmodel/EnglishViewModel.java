@@ -36,9 +36,5 @@ public class EnglishViewModel extends ViewModel {
         }
         return model;
     }
-
-
-
-
 }
 

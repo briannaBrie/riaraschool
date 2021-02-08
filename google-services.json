@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "179011865007",
+    "firebase_url": "https://student-bfe24.firebaseio.com",
+    "project_id": "student-bfe24",
+    "storage_bucket": "student-bfe24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179011865007:android:fa9b61fc3079f83070475a",
+        "android_client_info": {
+          "package_name": "com.example.riaraschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179011865007-1sk5cr1dltbd12a26e6udfaroaie2o6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuUsMUarRHw9k8MCbBrtlvjti5qk0eh5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179011865007-1sk5cr1dltbd12a26e6udfaroaie2o6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

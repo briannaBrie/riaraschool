@@ -36,4 +36,13 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >4 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="action_register">No Account? Register Here</string>
+    <string name="action_login">Have an Account? Sign In Here</string>
+    <string name="register">Register</string>
+    <string name="welcome_note">WELCOME TO RIARA SCHOOLS</string>
+    <string name="welcome_back">WELCOME BACK</string>
+    <string name="welcome_to_riara_schools">Welcome to Riara Schools</string>
+    <string name="have_fun_while_learning">Have fun while learning</string>
+    <string name="about">About</string>
+    <string name="map">Map</string>
 </resources>

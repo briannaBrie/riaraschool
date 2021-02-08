@@ -3,6 +3,7 @@
     package="com.example.riaraschool">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -12,7 +13,9 @@
         android:roundIcon="@mipmap/ic_riara_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Riaraschool">
-        <activity android:name=".ProfileActivity"
+        <activity android:name=".RegActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
             android:theme="@style/Theme.Login" />
         <activity
             android:name=".LoginActivity"
